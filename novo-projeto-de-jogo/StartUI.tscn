@@ -1,0 +1,137 @@
+[gd_scene load_steps=3 format=3 uid="uid://blj2j2tnxlw2h"]
+
+[ext_resource type="Script" path="res://start_ui.gd" id="1_j4awu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2l5nd"]
+bg_color = Color(0.52549, 0.705882, 0.6, 1)
+border_color = Color(0.52549, 0.705882, 0.6, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.051971, 0.051971, 0.051971, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(3, 3)
+
+[node name="StartUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j4awu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.968627, 0.968627, 0.968627, 1)
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 872.0
+offset_top = 517.0
+offset_right = 1122.0
+offset_bottom = 617.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_2l5nd")
+text = "Iniciar"
+
+[node name="Escreva" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_top = 24.0
+offset_right = 117.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.481789, 0.481789, 0.481789, 1)
+theme_override_font_sizes/font_size = 20
+text = "Escreva a sua fake news"
+
+[node name="Escolha" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -351.0
+offset_top = 413.0
+offset_right = 29.0
+offset_bottom = 448.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Escolha a sua plataforma inicial"
+
+[node name="Pontos" type="Container" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cred" type="Container" parent="Pontos"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Credibility" type="Label" parent="Pontos/Cred"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Credibilidade"
+
+[node name="Complex" type="Container" parent="Pontos"]
+layout_mode = 2
+
+[node name="Complexity" type="Label" parent="Pontos/Complex"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Complexidade"
+
+[node name="Conserv" type="Container" parent="Pontos"]
+layout_mode = 2
+
+[node name="Right sided" type="Label" parent="Pontos/Conserv"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Conservadorismo"
+
+[node name="Progress" type="Container" parent="Pontos"]
+layout_mode = 2
+
+[node name="Left sided" type="Label" parent="Pontos/Progress"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Progressismo"
+
+[node name="Enterteinment" type="Container" parent="Pontos"]
+layout_mode = 2
+
+[node name="Humor aspect" type="Label" parent="Pontos/Enterteinment"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Valor de entretenimento"
+
+[connection signal="pressed" from="Control/Start" to="." method="_on_start_button_pressed"]
