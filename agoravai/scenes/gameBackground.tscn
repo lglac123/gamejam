@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmbc8588jnyeh"]
+
+[ext_resource type="PackedScene" uid="uid://cifxmhwm52pxu" path="res://scenes/HUD1.tscn" id="1_wheyb"]
+
+[node name="GameBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Control" parent="." instance=ExtResource("1_wheyb")]
